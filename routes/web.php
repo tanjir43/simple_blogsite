@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +19,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
+
+Route::prefix('/admin')->group(function(){
+    Route::get('/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
+    Route::post('/login',[AdminLoginController::class,'loginAdmin'])->name('login.admin');
+   
+    Route::group(['middleware'=>'admin'],function(){
+   
+        Route::get('/dashboard',[AdminLoginController::class,'adminDashboard'])->name('admin.dashboard');
+
+        Route::get('/profile',[AdminProfileController::class,'adminProfile'])->name('admin.profile');
+   
+        Route::post('/profile/update/{id}',[AdminProfileController::class,'adminProfileUpdate'])->name('admin.profile.update');
+    });
+    
+    Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');
+
+});
+
 
 
 Auth::routes();

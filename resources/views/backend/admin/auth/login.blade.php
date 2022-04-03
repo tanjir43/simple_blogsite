@@ -21,8 +21,12 @@
     <div class="brand mt-5">
         <a class="link" href="{{route('admin.login')}}">News Portal</a>
     </div>
-    <form id="login-form" action="javascript:;" method="post">
+    <form id="login-form" action="{{route('login.admin')}}" method="post">
+        @csrf
         <h2 class="login-title">Admin Log in</h2>
+        
+        @include('backend.admin.includes._message')
+       
         <div class="form-group">
             <div class="input-group-icon right">
                 <div class="input-icon"><i class="fa fa-envelope"></i></div>

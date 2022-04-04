@@ -17,4 +17,4 @@
        <!-- responsive CSS -->
        <link rel="stylesheet" href="{{asset('/')}}front_assets/css/responsive.css" />
        <!-- favicon -->
-       <link rel="icon" href="{{asset('/')}}front_assets/img/logos/favicon.png" type="image/png" sizes="16x16" />
+       <link rel="icon" href="{{asset('uploads/'.$theme->favicon)}}" type="image/png" sizes="16x16" />

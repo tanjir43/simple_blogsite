@@ -11,4 +11,5 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
   <!-- THEME STYLES-->
   <link href="{{asset('/')}}assets/css/main.min.css" rel="stylesheet" />
+  <link rel="icon" href="{{asset('uploads/'.$theme->favicon)}}" type="image/png" sizes="16x16" />
   <!-- PAGE LEVEL STYLES-->

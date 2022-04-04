@@ -37,18 +37,18 @@
     </div>
     <!-- menu for mobile device -->
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
-            <img src="assets/img/logos/logo_light.png" alt="logo_light" />
-            <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+        <a href="{{route('index')}}" class="logo">
+            <img src="{{asset('uploads/'.$theme->logo)}}"  alt="logo_light" />
+            <img src="{{asset('uploads/'.$theme->logo)}}"  alt="logo_light" />
         </a>
     </div>
     <!-- menu for desktop device-->
     <div class="main-nav">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/img/logos/logo_light.png" alt="logo_light" />
-                    <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+                <a class="navbar-brand" href="{{route('index')}}">
+                    <img src="{{asset('uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}" />
+                    <img src="{{asset('uploads/'.$theme->logo)}}" alt="{{$theme->website_name}}" />
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">

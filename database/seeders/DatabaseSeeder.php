@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\Theme;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,6 +26,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'AdminUser',
             'email'=> 'admin2@gmail.com',
             'password'=> bcrypt('password'),
-    ]);
+         ]);
+
+         Theme::insert([
+            'website_name' => 'News portal',
+            'website_tagline' => 'Inspire the next',
+            'logo'      => 'front_assets/img/logos/logo.png',
+            'favicon'   => 'front_assets/img/logos/favicon.png'
+         ]);
+
     }
 }

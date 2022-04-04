@@ -20,5 +20,11 @@ class DatabaseSeeder extends Seeder
                 'email'=> 'admin@gmail.com',
                 'password'=> bcrypt('password'),
         ]);
+
+        Admin::insert([
+            'name' => 'AdminUser',
+            'email'=> 'admin2@gmail.com',
+            'password'=> bcrypt('password'),
+    ]);
     }
 }

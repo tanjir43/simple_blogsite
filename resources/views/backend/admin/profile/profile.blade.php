@@ -49,14 +49,15 @@
                     <div class="form-group">
                         <label>Image</label>
                         <input class="form-control-file" type="file" name="image" placeholder="Image" accept="image/*" onchange="readURL(this)">
-                        @if ($adminDetails->image)
+                        @if (!empty($adminDetails->image))
                             <img id="one" src="{{asset('uploads/admin/'.$adminDetails->image)}}" height="100" alt="">
-                
+                        @else
+                        <img id="one" src="{{asset('assets/img/default_image.jpg')}}" height="100" alt="">
                         @endif
                     </div>
                    
                     <div class="form-group">
-                        <a href="" class="btn btn-danger px-4">Delete Image</a>
+                        {{-- <a href="javascript:" rel="{{$adminDetails->id}}" rel1="delete-image" class="btn btn-danger btn_delete px-4">Delete Image</a> --}}
                         <button class="btn btn-default" type="submit">Update Profile</button>
                     </div>
                 </form>
@@ -95,5 +96,29 @@
         }
     }
 </script>
+{{-- 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $('body').on('click','.btn-delete', function(event){
+       event.preventDefault();
+
+       var SITEURL = '{{URL::to('')}}';
+       var id  = $(this).attr('rel');
+       var deleteFunction = $(this).attr('rel1');
+       swal({
+            title: "Are you Sure?",
+            text: "You will not able to recover this record again",
+            type: "warning",
+            showCancelButton:true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText:"yes, Delete it!"
+             },
+         function (){
+           window.location.href = SITEURL + "/admin/" + deleteFunction + "/" id;
+       });
+    });
+</script> --}}
+
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
 
 @endsection

@@ -15,8 +15,31 @@
  <!-- PAGE LEVEL SCRIPTS-->
  <script src="{{asset('/')}}./assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>
  <!-- Sweet alert -->
- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 
+ <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
  @yield('scripts')
 
- 
+ {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+{{-- <script>
+        $('body').on('click','.btn-delete', function(event){
+            alert()
+            
+            swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+}
+});
+</script> --}}

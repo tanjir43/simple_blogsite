@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+ @include('backend.admin.includes.meta')  
 <title>Molla - @yield('title') </title>
     @include('backend.admin.includes.style')
 </head>

@@ -144,10 +144,16 @@ $current_user = Auth::guard('admin')->user();
             </li>
             <li class="dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
+                    @if (!empty($current_user->image))
                     <img src="{{asset('uploads/admin/'.$current_user->image)}}" />
+                    @else
+                    <img src="{{asset('assets/img/default_image.jpg')}}" />
+                    @endif
                     <span></span>{{$current_user->name}}<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="fa fa-user"></i>Profile</a>
+                    <a class="dropdown-item" href="{{route('change.password')}}"><i class="fa fa-cog"></i>Change pass</a>
+
                     <li class="dropdown-divider"></li>
 {{--                    @if(Session::get('user_id'))--}}
                     <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="fa fa-power-off"></i>Logout</a>

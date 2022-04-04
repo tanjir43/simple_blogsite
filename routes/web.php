@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\front\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/',[IndexController::class,'index'])->name('index');
 
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
@@ -31,7 +30,13 @@ Route::prefix('/admin')->group(function(){
         Route::get('/profile',[AdminProfileController::class,'adminProfile'])->name('admin.profile');
    
         Route::post('/profile/update/{id}',[AdminProfileController::class,'adminProfileUpdate'])->name('admin.profile.update');
-    });
+        
+        Route::get('/profile/delete-image/{id}',[AdminProfileController::class,'deleteImage'])->name('delete.image');
+    
+        Route::get('/profile/change-password',[AdminProfileController::class,'changePassword'])->name('change.password');
+        
+        Route::post('/check-password',[AdminProfileController::class,'checkUserPassword'])->name('check.user.password');
+    }); 
     
     Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');
 

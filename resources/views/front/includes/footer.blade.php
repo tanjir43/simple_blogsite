@@ -78,22 +78,22 @@
                         <h5>Contact info</h5>
                         <div class="contact-info">
                             <i class="envy envy-pin"></i>
-                            <p>113 Solit, White House, New Jersey, USA</p>
+                            <p>{{$setting->address}}</p>
                         </div>
                         <div class="contact-info">
                             <i class="envy envy-call"></i>
                             <p>
-                                <a href="tel:+001-548-159-2491">+001-548-159-2491</a>
+                                <a href="tel:+001-548-159-2491">{{$setting->phone}}</a>
                             </p>
                             <br>
                             <p>
-                                <a href="tel:+001-548-159-2492">+001-548-159-2492</a>
+                                <a href="tel:+001-548-159-2492">{{$setting->alt_phone}}</a>
                             </p>
                         </div>
                         <div class="contact-info">
                             <i class="envy envy-plane"></i>
                             <p>
-                                <a href="mailTo:hello@solit.com">hello@solit.com</a>
+                                <a href="mailTo:{{$setting->email}}">{{$setting->email}}</a>
                             </p>
                         </div>
                     </div>

@@ -8,27 +8,27 @@
                 <ul class="info-list">
                     <li>
                         <i class="envy envy-email"></i>
-                        <a href="mailTo:hello@solit.com">hello@solit.com</a>
+                        <a href="mailTo:{{$setting->email}}">{{$setting->email}}</a>
                     </li>
-                    <li><i class="envy envy-wall-clock"></i>Mon - Sat: 8.00 am - 7.00 pm</li>
+                    <li><i class="envy envy-wall-clock"></i>{{$setting->office_hour}}</li>
                 </ul>
             </div>
             <!-- top right -->
             <div class="top-right">
                 <div class="social-link">
-                    <a href="#" target="_blank">
+                    <a href="{{$social->facebook}}" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="{{$social->twitter}}" target="_blank">
                         <i class="fab fa-tumblr"></i>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="{{$social->youtube}}" target="_blank">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="{{$social->linkedin}}" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="{{$social->instagram}}" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>

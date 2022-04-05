@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\front\IndexController;
+use App\Models\Social;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +44,14 @@ Route::prefix('/admin')->group(function(){
         Route::get('/theme',[ThemeController::class,'theme'])->name('theme');
 
         Route::post('/theme/{id}',[ThemeController::class,'themeUpdate'])->name('theme.update');
+
+        Route::get('/setting',[SettingController::class,'setting'])->name('setting');
+
+        Route::post('/setting/{id}',[SettingController::class,'settingUpdate'])->name('setting.update');
+        
+        Route::get('/social',[SocialController::class,'social'])->name('social');
+
+        Route::post('/social/{id}',[SocialController::class,'socialUpdate'])->name('social.update');
     
     }); 
     

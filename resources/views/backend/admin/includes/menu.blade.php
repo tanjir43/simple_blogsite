@@ -20,10 +20,13 @@
                     <span class="nav-label">Settings</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="mailbox.html">Site settings</a>
+                        <a href="{{route('setting')}}">Site settings</a>
                     </li>
                     <li>
                         <a href="{{route('theme')}}">Theme settings</a>
+                    </li>
+                    <li>
+                        <a href="{{route('social')}}">Social settings</a>
                     </li>
                     
                 </ul>

@@ -1038,9 +1038,7 @@ img {
 }
 
 .home-banner-area.banner-type-one {
-  padding-top: 280px;
-  padding-bottom: 200px;
-  background: url("../img/banner/banner_1.png") no-repeat center;
+
 }
 
 .home-banner-area.banner-type-one::before {

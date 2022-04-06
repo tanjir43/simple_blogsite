@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\ThemeController;
@@ -53,6 +54,14 @@ Route::prefix('/admin')->group(function(){
 
         Route::post('/social/{id}',[SocialController::class,'socialUpdate'])->name('social.update');
     
+        //Bnaner section
+
+        Route::get('/banners',[BannerController::class,'index'])->name('banner.index');
+        Route::get('/banner/add',[BannerController::class,'bannerAdd'])->name('banner.add');
+        Route::post('/banner/store',[BannerController::class,'store'])->name('banner.store');
+        Route::get('/banner/edit/{id}',[BannerController::class,'edit'])->name('banner.edit');
+        Route::post('/banner/update/{id}',[BannerController::class,'update'])->name('banner.update');
+        Route::post('/delete-banner/{id}',[BannerController::class,'delete'])->name('banner.delete');
     }); 
     
     Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');

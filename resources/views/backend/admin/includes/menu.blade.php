@@ -31,6 +31,20 @@
                     
                 </ul>
             </li>
+
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-image"></i>
+                    <span class="nav-label">Banner mangements</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('banner.index')}}">manage banner </a>
+                        <a href="{{route('banner.add')}}">add banner </a>
+                    </li>
+                    <li>
+                        <a href="">edit banner</a>
+                    </li>
+                </ul>
+            </li>
           
           
         </ul>

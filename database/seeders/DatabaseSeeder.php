@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\Banner;
 use App\Models\SiteSetting;
 use App\Models\Social;
 use App\Models\Theme;
@@ -47,7 +48,17 @@ class DatabaseSeeder extends Seeder
 
          Social::insert([
             'facebook' => 'https://www.facebook.com/Tanjir.islam.140/',
-         ]);    
+         ]); 
+         Banner::insert([
+            'title'           => 'New banner',
+            'banner_content'  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore velit porro nisi fuga amet. Ab facilis quis praesentium? Ex, cumque!',
+            'image'           => 'front_assets/img/banner/banner_2.png',
+            'link_title'      => 'Set title',
+            'link_url'        => 'www.facebook.com',
+            'priority'        => '1',
+            'status'          => 'active'
+           
+         ]);   
 
     }
 }

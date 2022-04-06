@@ -2,48 +2,27 @@
 
 @section('body')
  <!-- start home banner area -->
- <div id="home" class="home-banner-area banner-type-one">
+ <div id="home" class="home-banner-area banner-type-one" style=" padding-top: 280px;  padding-bottom: 200px; background: url('{{asset('uploads/'.$bannersImage->image)}}') no-repeat center;">
+     
+         
+     
     <div class="home-slider owl-carousel">
+        @foreach ($banners as  $banner)
         <div class="item">
             <div class="container">
                 <div class="banner-content">
-                    <h1>The Ultimate IT Solution For Your Company</h1>
+                    <h1>{{$banner->title}}</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                       {!!$banner->banner_content!!}
                     </p>
                     <div class="cta-btn">
-                        <a href="../../Solit-html/index.html" class="btn btn-solid">Try for free</a>
+                        <a href="{{$banner->link_url}}" class="btn btn-solid">{{$banner->link_title}}</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="container">
-                <div class="banner-content">
-                    <h1>Best Digital Marketing Service For You</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.
-                    </p>
-                    <div class="cta-btn">
-                        <a href="../../Solit-html/index.html" class="btn btn-solid">Try for free</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="container">
-                <div class="banner-content">
-                    <h1>We Provide Best SEO Marketing Solutions</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consecteturdo eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                    </p>
-                    <div class="cta-btn">
-                        <a href="../../Solit-html/index.html" class="btn btn-solid">Try free</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endforeach  
+    </div>  
 </div>
 <!--end home banner area -->
 <!-- start promo section -->

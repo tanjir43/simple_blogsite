@@ -1,63 +1,72 @@
 @extends('backend.admin.master')
 @section('title')
-    Admin-Profile
+    Admin-add-banner
 @endsection
 
 @section('body')
 
 <div class="page-heading">
-    <h1 class="page-title">Profile</h1>
+    <h1 class="page-title">Banner</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="index.html"><i class="la la-home font-20"></i></a>
         </li>
-        <li class="breadcrumb-item">Profile</li>
+        <li class="breadcrumb-item">new banner</li>
     </ol>
 </div>
 <div class="page-content fade-in-up">
     <div class="row">
         
         <div class="col-lg-12 col-md-12">
-            <h4 class="text-center">Edit My Profile</h4>
+            <h4 class="text-center">Create new Banner</h4>
             @include('backend.admin.includes._message')
             <div>
-                <form action="{{route('admin.profile.update',$adminDetails->id)}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('banner.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-sm-12 form-group">
-                            <label>Full Name</label>
-                            <input class="form-control" type="text" name="name" value="{{$adminDetails->name}}" placeholder="First Name">
+                            <label>Title </label>
+                            <input class="form-control" type="text" name="title"  placeholder="Title" value="{{old('title')}}">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Email</label>
-                        <input class="form-control" type="email" name="email" value="{{$adminDetails->email}}" placeholder="Email address">
+                        <label>Banner content</label>
+                        <textarea name="banner_content" id="summernote"  value="{{old('banner_content')}}" ></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Address</label>
-                        <input class="form-control" type="text" name="address" value="{{$adminDetails->address}}" placeholder="Address">
+                        <label>Link title</label>
+                        <input class="form-control" type="text" name="link_title"  placeholder="Link title" value="{{old('link_title')}}">
                     </div>
                     
                     <div class="form-group">
-                        <label>Phone</label>
-                        <input class="form-control" type="text" name="phone" value="{{$adminDetails->phone}}" placeholder="Phone">
+                        <label>Link Url</label>
+                        <input class="form-control" type="text" name="link_url"  placeholder="Link url" value="{{old('link_url')}}">
                     </div>
+                    
                     
                     
                     <div class="form-group">
                         <label>Image</label>
                         <input class="form-control-file" type="file" name="image" placeholder="Image" accept="image/*" onchange="readURL(this)">
-                        @if (!empty($adminDetails->image))
-                            <img id="one" src="{{asset('uploads/admin/'.$adminDetails->image)}}" height="100" alt="">
-                        @else
-                        <img id="one" src="{{asset('assets/img/default_image.jpg')}}" height="100" alt="">
-                        @endif
+                        
+                            <img id="one" src="" height="100" alt="">
                     </div>
+
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <input type="number"  name="priority" class="form-control" value="{{old('priority')}}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mark as active(status)</label>
+                        <input type="checkbox"  name="status" value="1" checked>
+                    </div>
+                    
+
                    
                     <div class="form-group">
-                        {{-- <a href="javascript:" rel="{{$adminDetails->id}}" rel1="delete-image" class="btn btn-danger btn_delete px-4">Delete Image</a> --}}
                         <button class="btn btn-default" type="submit">Update Profile</button>
                     </div>
                 </form>
@@ -96,8 +105,9 @@
         }
     }
 </script>
-
-{{-- <script>
+{{-- 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
     $('body').on('click','.btn-delete', function(event){
        event.preventDefault();
 

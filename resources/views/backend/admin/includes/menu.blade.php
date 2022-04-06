@@ -40,8 +40,31 @@
                         <a href="{{route('banner.index')}}">manage banner </a>
                         <a href="{{route('banner.add')}}">add banner </a>
                     </li>
+                </ul>
+            </li>
+
+            
+
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-details"></i>
+                    <span class="nav-label">About mangements</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
                     <li>
-                        <a href="">edit banner</a>
+                        <a href="{{route('about.index')}}">manage about </a>
+                        <a href="{{route('about.add')}}">add about </a>
+                    </li>
+                </ul>
+            </li>
+          
+          
+
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-users"></i>
+                    <span class="nav-label">Teams mangements</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('designation.index')}}"> Designation </a>
+                        <a href="">All Teams  </a>
                     </li>
                 </ul>
             </li>

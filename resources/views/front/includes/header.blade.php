@@ -70,7 +70,7 @@
                             <a href="#" class="nav-link dropdown-toggle">Pages</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link"> About </a>
+                                    <a href="{{route('about')}}" class="nav-link"> About </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="team.html" class="nav-link"> Team </a>

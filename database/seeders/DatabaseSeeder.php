@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AboutUs;
 use App\Models\Admin;
 use App\Models\Banner;
 use App\Models\SiteSetting;
@@ -58,7 +59,13 @@ class DatabaseSeeder extends Seeder
             'priority'        => '1',
             'status'          => 'active'
            
-         ]);   
+         ]);  
+         AboutUs::insert([
+            'page_name' => 'About Us',
+            'page_title'=> 'Management IT services',
+            'page_subtitle' => '',
+            'page_content' => ''
+         ]); 
 
     }
 }

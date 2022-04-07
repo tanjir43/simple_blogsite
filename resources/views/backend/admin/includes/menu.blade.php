@@ -71,6 +71,31 @@
                 </ul>
             </li>
           
+            
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-comments"></i>
+                    <span class="nav-label">Testimonial </span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('testimonial.index')}}">All Testimonial</a>
+                        <a href="{{route('testimonial.add')}}">Add Testimonial</a>
+
+                    </li>
+                </ul>
+            </li>
+
+            
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-circle"></i>
+                    <span class="nav-label">CMS </span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('category.index')}}">Categories</a>
+                        <a href="{{route('tag.index')}}">Tags</a>
+                        <a href="{{route('blog.index')}}">Blogs</a>
+                    </li>
+                </ul>
+            </li>
           
         </ul>
     </div>

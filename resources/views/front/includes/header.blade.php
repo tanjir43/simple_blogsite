@@ -76,7 +76,7 @@
                                     <a href="team.html" class="nav-link"> Team </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="testimonials.html" class="nav-link">
+                                    <a href="{{route('testimonial')}}" class="nav-link">
                                         Testimonials
                                     </a>
                                 </li>

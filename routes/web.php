@@ -3,11 +3,15 @@
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\Front\FrontendController;
 use App\Http\Controllers\front\IndexController;
@@ -29,6 +33,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[IndexController::class,'index'])->name('index');
 
 Route::get('about-us',[FrontendController::class,'about'])->name('about');
+
+Route::get('/testimonial',[FrontendController::class,'testimonial'])->name('testimonial');
 
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
@@ -95,7 +101,41 @@ Route::prefix('/admin')->group(function(){
         Route::post('/team/update/{id}',[TeamController::class,'update'])->name('team.update');
         Route::post('/delete-team/{id}',[TeamController::class,'delete'])->name('team.delete');
 
-    
+        //Testimonial section
+
+        Route::get('/testimonial',[TestimonialController::class,'index'])->name('testimonial.index');
+        Route::get('/testimonial/add',[TestimonialController::class,'testimonialAdd'])->name('testimonial.add');
+        Route::post('/testimonial/store',[TestimonialController::class,'store'])->name('testimonial.store');
+        Route::get('/testimonial/edit/{id}',[TestimonialController::class,'edit'])->name('testimonial.edit');
+        Route::post('/testimonial/update/{id}',[TestimonialController::class,'update'])->name('testimonial.update');
+        Route::post('/delete-testimonial/{id}',[TestimonialController::class,'delete'])->name('testimonial.delete');
+ 
+        //Category section
+
+        Route::get('/categories',[CategoryController::class,'index'])->name('category.index');
+        Route::get('/category/add',[CategoryController::class,'categoryAdd'])->name('category.add');
+        Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+        Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+        Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+        Route::post('/delete-category/{id}',[CategoryController::class,'delete'])->name('category.delete');
+        
+        //Tag Controller
+        
+        Route::get('/tags',[TagController::class,'index'])->name('tag.index');
+        Route::get('/tag/add',[TagController::class,'tagAdd'])->name('tag.add');
+        Route::post('/tag/store',[TagController::class,'store'])->name('tag.store');
+        Route::get('/tag/edit/{id}',[TagController::class,'edit'])->name('tag.edit');
+        Route::post('/tag/update/{id}',[TagController::class,'update'])->name('tag.update');
+        Route::post('/delete-tag/{id}',[TagController::class,'delete'])->name('tag.delete');
+        
+        //Blog section
+
+        Route::get('/blogs',[BlogController::class,'index'])->name('blog.index');
+        Route::get('/blog/add',[BlogController::class,'blogAdd'])->name('blog.add');
+        Route::post('/blog/store',[BlogController::class,'store'])->name('blog.store');
+        Route::get('/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
+        Route::post('/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
+        Route::post('/delete-blog/{id}',[BlogController::class,'delete'])->name('blog.delete');
     }); 
     
     Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');

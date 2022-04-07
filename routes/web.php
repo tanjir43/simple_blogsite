@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\ThemeController;
 use App\Http\Controllers\Front\FrontendController;
 use App\Http\Controllers\front\IndexController;
@@ -84,6 +85,17 @@ Route::prefix('/admin')->group(function(){
         Route::get('/designation/edit/{id}',[DesignationController::class,'edit'])->name('designation.edit');
         Route::post('/designation/update/{id}',[DesignationController::class,'update'])->name('designation.update');
         Route::post('/delete-designation/{id}',[DesignationController::class,'delete'])->name('designation.delete');
+    
+        // Team section
+
+        Route::get('/team',[TeamController::class,'index'])->name('team.index');
+        Route::get('/team/add',[TeamController::class,'teamAdd'])->name('team.add');
+        Route::post('/team/store',[TeamController::class,'store'])->name('team.store');
+        Route::get('/team/edit/{id}',[TeamController::class,'edit'])->name('team.edit');
+        Route::post('/team/update/{id}',[TeamController::class,'update'])->name('team.update');
+        Route::post('/delete-team/{id}',[TeamController::class,'delete'])->name('team.delete');
+
+    
     }); 
     
     Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');

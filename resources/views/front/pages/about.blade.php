@@ -98,131 +98,35 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                 </div>
                 <div class="team-slider owl-carousel">
+
+                    @foreach ($teams as $team )
+                        
                     <div class="team-item">
                         <div class="team-image">
-                            <img src="assets/img/team/team_10.jpg" alt="team-member" />
+                            <img src="{{asset('uploads/'.$team->image)}}" alt="team-member" />
                         </div>
                         <div class="team-content">
                             <h5>
-                                <a href="#">Rosalina</a>
+                                <a href="#">{{$team->name}}</a>
                             </h5>
-                            <p class="mb-2">CEO & Founder</p>
+                            <p class="mb-2">{{$team->designation->title}}</p>
                             <div class="social-link">
-                                <a href="#" class="bg-tertiary" target="_blank">
+                                <a href="{{$team->facebook}}" class="bg-tertiary" target="_blank">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" class="bg-success" target="_blank">
-                                    <i class="fab fa-tumblr"></i>
+                                <a href="{{$team->twitter}}" class="bg-success" target="_blank">
+                                    <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="bg-danger" target="_blank">
-                                    <i class="fab fa-youtube"></i>
+                                <a href="{{$team->instagram}}" class="bg-danger" target="_blank">
+                                    <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="bg-info" target="_blank">
+                                <a href="{{$team->linkedin}}" class="bg-info" target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="assets/img/team/team_11.jpg" alt="team-member" />
-                        </div>
-                        <div class="team-content">
-                            <h5>
-                                <a href="#">Fiona Endley</a>
-                            </h5>
-                            <p class="mb-2">Ul/UX Designer</p>
-                            <div class="social-link">
-                                <a href="#" class="bg-tertiary" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-success" target="_blank">
-                                    <i class="fab fa-tumblr"></i>
-                                </a>
-                                <a href="#" class="bg-danger" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="bg-info" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="assets/img/team/team_12.jpg" alt="team-member" />
-                        </div>
-                        <div class="team-content">
-                            <h5>
-                                <a href="#">Billy Vogel</a>
-                            </h5>
-                            <p class="mb-2">Front End Developer</p>
-                            <div class="social-link">
-                                <a href="#" class="bg-tertiary" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-success" target="_blank">
-                                    <i class="fab fa-tumblr"></i>
-                                </a>
-                                <a href="#" class="bg-danger" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="bg-info" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="assets/img/team/team_13.jpg" alt="team-member" />
-                        </div>
-                        <div class="team-content">
-                            <h5>
-                                <a href="#">Jane Anderson</a>
-                            </h5>
-                            <p class="mb-2">Digital Marketer</p>
-                            <div class="social-link">
-                                <a href="#" class="bg-tertiary" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-success" target="_blank">
-                                    <i class="fab fa-tumblr"></i>
-                                </a>
-                                <a href="#" class="bg-danger" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="bg-info" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="assets/img/team/team_6.jpg" alt="team-member" />
-                        </div>
-                        <div class="team-content">
-                            <h5>
-                                <a href="#">Alina</a>
-                            </h5>
-                            <p class="mb-2">CEO & Founder</p>
-                            <div class="social-link">
-                                <a href="#" class="bg-tertiary" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-success" target="_blank">
-                                    <i class="fab fa-tumblr"></i>
-                                </a>
-                                <a href="#" class="bg-danger" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="bg-info" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

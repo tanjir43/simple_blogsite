@@ -64,7 +64,9 @@
                 <ul class="nav-2-level collapse">
                     <li>
                         <a href="{{route('designation.index')}}"> Designation </a>
-                        <a href="">All Teams  </a>
+                        <a href="{{route('team.index')}}">All Teams</a>
+                        <a href="{{route('team.add')}}">Add Teams</a>
+
                     </li>
                 </ul>
             </li>

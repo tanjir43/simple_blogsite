@@ -350,68 +350,31 @@
                 <img src="assets/img/clients/client_6.png" alt="client-5" />
             </div>
             <div class="testimonial-slider owl-carousel">
+                @foreach ($testimonials as $testimonial )
                 <div class="slider-item">
-                    <div class="qoute-icon">
-                        <img src="assets/img/resource/quotation.png" alt="quotation" />
+                    <div class="qoute-icon mb-3">
+                        <img src="{{asset('/')}}assets/img/resource/quotation.png" alt="quotation" />
                     </div>
                     <div class="inner-text">
                         <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+                            {{$testimonial->details}}
                         </p>
                     </div>
                     <div class="client">
                         <div class="client-img">
-                            <img src="assets/img/clients/client_7.png" alt="client-1" />
+                            <img src="{{asset('uploads/'.$testimonial->image)}}" alt="client-1" />
                         </div>
                         <div class="client-info">
-                            <h6>David McLean</h6>
-                            <span>CEO & Manager</span>
+                            <h3>{{$testimonial->name}}</h3>
+                            <span>{{$testimonial->position}}</span>
                         </div>
                     </div>
                 </div>
-                <!-- slider item -->
-                <div class="slider-item">
-                    <div class="qoute-icon">
-                        <img src="assets/img/resource/quotation.png" alt="quotation" />
-                    </div>
-                    <div class="inner-text">
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                        </p>
-                    </div>
-                    <div class="client">
-                        <div class="client-img">
-                            <img src="assets/img/clients/client_8.png" alt="client-2" />
-                        </div>
-                        <div class="client-info">
-                            <h6>Rosalina D.</h6>
-                            <span>CEO & Manager</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- slider item -->
-                <div class="slider-item">
-                    <div class="qoute-icon">
-                        <img src="assets/img/resource/quotation.png" alt="quotation" />
-                    </div>
-                    <div class="inner-text">
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                        </p>
-                    </div>
-                    <div class="client">
-                        <div class="client-img">
-                            <img src="assets/img/clients/client_9.png" alt="client-1" />
-                        </div>
-                        <div class="client-info">
-                            <h6>Sam McLean</h6>
-                            <span>CEO & Manager</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+              
             </div>
             <div class="overlay-img">
-                <img src="assets/img/background/Testimonial_bg.png" alt="Testimonial_bg" />
+                <img src="{{asset('/')}}assets/img/background/Testimonial_bg.png" alt="Testimonial_bg" />
             </div>
         </div>
         <!-- tesimonial-grid -->

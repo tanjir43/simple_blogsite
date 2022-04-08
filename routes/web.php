@@ -36,6 +36,12 @@ Route::get('about-us',[FrontendController::class,'about'])->name('about');
 
 Route::get('/testimonial',[FrontendController::class,'testimonial'])->name('testimonial');
 
+Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
+
+Route::get('/blog-details/{slug}', [FrontendController::class, 'blogDetails'])->name('blog.details');
+
+Route::get('/category/{slug}',[FrontendController::class,'categoryBlog'])->name('category.blog');
+
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
     Route::post('/login',[AdminLoginController::class,'loginAdmin'])->name('login.admin');

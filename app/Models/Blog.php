@@ -23,5 +23,14 @@ class Blog extends Model
         return $this->belongsTo(Category::class,'category_id');
     }
 
+    public function tags(){
+        return $this->belongsToMany(Tag::class, 'blog_tags');
+    }
+
+    public function admin(){
+        return $this->belongsTo(Admin::class,'admin_id');
+    }
+   
+
 
 }

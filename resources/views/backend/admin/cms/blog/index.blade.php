@@ -37,7 +37,13 @@
 
                         <td>{{$blog->categories->category_name}}</td>
 
-                        <td>Tags</td>
+                        <td>
+                            @php $blog_tags = $blog->tags->sortBy('tag_name')->pluck('id'); @endphp
+                            @foreach($blog_tags as $group)
+                                <span class="badge bg-secondary ml-2 mt-2">{{ \App\Models\Tag::find($group)->tag_name }}</span>
+                            @endforeach
+
+                        </td>
                         <td>{{$blog->view_count}}</td>
                         <td>
                             @if ($blog->status == 'published')

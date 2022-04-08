@@ -44,12 +44,14 @@
                         <input type="checkbox"  name="status" value="1" checked>
                     </div>
 
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label>Tags </label>
-                        <select name="category_id" class="form-control" >
-                            <option value="{{$category->id}}">{{$category->title}}</option>
+                        <select name="tag_id[]" class="form-control js-example-basic-multiple" multiple >
+                            @foreach ($tags as $tag )
+                            <option value="{{$tag->id}}">{{$tag->tag_name}}</option>
+                            @endforeach
                         </select>
-                    </div> --}}
+                    </div>
 
 
                     <div class="form-group">
@@ -81,6 +83,9 @@
 @endsection
 
 @section('scripts')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script type="text/javascript">
     function readURL(input){
         if(input.files && input.files[0]){
@@ -91,6 +96,14 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2({
+        placeholder: 'Select Tags'
+    });
+});
 </script>
 
 @endsection

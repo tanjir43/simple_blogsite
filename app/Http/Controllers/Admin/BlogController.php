@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -21,11 +22,13 @@ class BlogController extends Controller
 
     public function blogadd(){
         $categories = Category::orderBy('category_name','ASC')->get();
-        return view('backend.admin.cms.blog.add',compact(['categories']));
+        $tags       = Tag::orderBy('tag_name','ASC')->get();
+        return view('backend.admin.cms.blog.add',compact(['categories','tags']));
     }
 
     public function store(Request $request){
         $data = $request->all();
+      
 
         $current_user = Auth::guard('admin')->user()->id;
 
@@ -68,7 +71,9 @@ class BlogController extends Controller
                 $blog->image = $filename;
             }
         }
+        $tags = $data['tag_id'];
         $blog->save();
+        $blog->tags()->attach($tags);
         Session::flash('success_message','Blog has been added successfully');
         return redirect()->back();
     }
@@ -76,7 +81,9 @@ class BlogController extends Controller
     public function edit($id){
         $blog = Blog::findOrFail($id);
         $categories = Category::orderby('category_name','ASC')->get();
-        return view('backend.admin.cms.blog.edit',compact(['categories','blog']));
+        $tags   = Tag::orderBy('tag_name','ASC')->get();
+        $blog_tag = $blog->tags()->pluck('tag_id')->toArray();
+        return view('backend.admin.cms.blog.edit',compact(['categories','blog','tags','blog_tag']));
     }
 
     public function update(Request $request , $id){
@@ -121,7 +128,9 @@ class BlogController extends Controller
                 $blog->image = $filename;
             }
         }
+        $tags = $data['tag_id'];
         $blog->save();
+        $blog->tags()->sync($tags);
         Session::flash('success_message', 'Blog has been Updated Successfully');
         return redirect()->route('blog.index');
     }

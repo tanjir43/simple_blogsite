@@ -14,4 +14,8 @@ class Tag extends Model
         self::$tag = Tag::findOrFail($id);
         self::$tag->delete();
     }
+
+    public function blogs(){
+        return $this->belongsToMany(Blog::class,'blog_tags');
+    }
 }

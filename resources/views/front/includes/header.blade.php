@@ -140,15 +140,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="blog-grid.html" class="nav-link">Blog grid</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-details.html" class="nav-link">blog details</a>
-                                </li>
-                            </ul>
+                          <a href="{{route('blog')}}" class="nav-link">Blog</a>            
                         </li>
                         <li class="nav-item">
                             <a href="contact.html" class="nav-link">contact</a>

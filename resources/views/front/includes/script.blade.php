@@ -1,3 +1,4 @@
+<script id="dsq-count-scr" src="//http-127-0-0-1-8000-toqqrorixo.disqus.com/count.js" async></script>
 <!-- jequery JS -->
 <script src="{{asset('/')}}front_assets/js/jquery.min.js"></script>
 <!-- bootstrap JS -->

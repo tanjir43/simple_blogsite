@@ -55,7 +55,7 @@
                     @foreach ($testimonials as $testimonial )
                     <div class="slider-item">
                         <div class="qoute-icon mb-3">
-                            <img src="{{asset('/')}}/assets/img/resource/quotation.png" alt="quotation" />
+                            <img src="{{asset('/')}}assets/img/resource/quotation.png" alt="quotation" />
                         </div>
                         <div class="inner-text">
                             <p>

@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\Admin\PricingController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\TagController;
@@ -41,6 +43,10 @@ Route::get('/blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('/blog-details/{slug}', [FrontendController::class, 'blogDetails'])->name('blog.details');
 
 Route::get('/category/{slug}',[FrontendController::class,'categoryBlog'])->name('category.blog');
+
+Route::get('/pricings', [FrontendController::class,'pricings'])->name('pricings');
+
+Route::get('/all-project',[FrontendController::class,'projects'])->name('proj');
 
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[\App\Http\Controllers\Admin\AdminLoginController::class,'adminLogin'])->name('admin.login');
@@ -142,6 +148,26 @@ Route::prefix('/admin')->group(function(){
         Route::get('/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
         Route::post('/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
         Route::post('/delete-blog/{id}',[BlogController::class,'delete'])->name('blog.delete');
+
+        //Pricings section
+
+        Route::get('/pricings',[PricingController::class,'index'])->name('pricing.index');
+        Route::get('/pricing/add',[PricingController::class,'pricingAdd'])->name('pricing.add');
+        Route::post('/pricing/store',[PricingController::class,'store'])->name('pricing.store');
+        Route::get('/pricing/edit/{id}',[PricingController::class,'edit'])->name('pricing.edit');
+        Route::post('/pricing/update/{id}',[PricingController::class,'update'])->name('pricing.update');
+        Route::post('/delete-pricing/{id}',[PricingController::class,'delete'])->name('pricing.delete');
+
+        //Project section
+
+        Route::get('/projects',[ProjectController::class,'index'])->name('project.index');
+        Route::get('/project/add',[ProjectController::class,'projectAdd'])->name('project.add');
+        Route::post('/project/store',[ProjectController::class,'store'])->name('project.store');
+        Route::get('/project/edit/{id}',[ProjectController::class,'edit'])->name('project.edit');
+        Route::post('/project/update/{id}',[ProjectController::class,'update'])->name('project.update');
+        Route::post('/delete-project/{id}',[ProjectController::class,'delete'])->name('project.delete');
+
+    
     }); 
     
     Route::get('/logout',[AdminLoginController::class,'adminLogout'])->name('admin.logout');

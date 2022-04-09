@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Package;
+use App\Models\Project;
 use App\Models\Social;
 use App\Models\Tag;
 use App\Models\Team;
@@ -51,5 +53,15 @@ class FrontendController extends Controller
         $blogs = Blog::where('status','published')->where('category_id',$categoryDetail->id)->latest()->paginate(6);
 
         return view('front.pages.categoryblog',compact(['categoryDetail','blogs']));
+    }
+
+    public function pricings(){
+        $pricings = Package::latest()->get();
+        return view('front.pages.pricings',compact('pricings'));
+    }
+
+    public function projects(){
+        $projects = Project::all();
+        return view('front.pages.project',compact('projects'));
     }
 }

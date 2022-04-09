@@ -96,7 +96,29 @@
                     </li>
                 </ul>
             </li>
+
+            
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-dollar"></i>
+                    <span class="nav-label">Pricings </span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('pricing.index')}}">All Pricings</a>
+                        <a href="{{route('pricing.add')}}">Add Pricing</a>
+                    </li>
+                </ul>
+            </li>
           
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-building"></i>
+                    <span class="nav-label">Projects </span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('project.index')}}">All project</a>
+                        <a href="{{route('project.add')}}">Add project</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

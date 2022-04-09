@@ -89,14 +89,12 @@
                                     <a href="#" class="nav-link dropdown-toggle">
                                         Projects
                                     </a>
-                                    <ul class="dropdown-menu">
+                                   
                                         <li class="nav-item">
-                                            <a href="projects.html" class="nav-link">projects</a>
+                                            <a href="{{route('proj')}}" class="nav-link">projects</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="project-details.html" class="nav-link">projects details</a>
-                                        </li>
-                                    </ul>
+                                       
+                                   
                                 </li>
                                 <li class="nav-item">
                                     <a href="sign-in.html" class="nav-link"> Sign In </a>
@@ -126,7 +124,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="pricing.html" class="nav-link">pricing</a>
+                            <a href="{{route('pricings')}}" class="nav-link">pricing</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link dropdown-toggle">services</a>
